@@ -2,7 +2,7 @@ FROM openanolis/anolisos:8.6
 
 # ARG DEBIAN_FRONTEND=noninteractive
 
-# ARG TAG_VERSION=main
+ARG TAG_VERSION=debug
 
 RUN yum groupinstall -y "Development Tools"
 RUN yum install -y epel-release
@@ -68,7 +68,7 @@ RUN mkdir jsoncpp \
 
 # Build App from source
 WORKDIR /home
-RUN git clone --recursive https://github.com/intel/ehsm.git \
+RUN git clone --recursive -b $TAG_VERSION https://github.com/1570005763/ehsm.git \
     && cd ehsm \
     && make
 

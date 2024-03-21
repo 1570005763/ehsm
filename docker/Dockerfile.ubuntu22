@@ -2,7 +2,7 @@ FROM ubuntu:22.04
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-ARG TAG_VERSION=main
+ARG TAG_VERSION=debug
 
 RUN apt-get update && apt-get install -y \
     vim \
